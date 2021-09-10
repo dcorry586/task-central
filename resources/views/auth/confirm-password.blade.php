@@ -34,3 +34,6 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+
+
+{{-- Laravel Breeze Part - probably for additional security offerings --}}
