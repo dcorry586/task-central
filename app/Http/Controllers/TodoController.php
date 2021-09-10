@@ -79,7 +79,7 @@ class TodoController extends Controller
      * @param  \App\Models\todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function edit(todo $todo)
+    public function edit($id)
     {
         $todo = todo::where('id', $id)->where('user_id', Auth::user()->id)->firstOrFail();
         return view('edit_todo', compact('todo'));
@@ -92,7 +92,7 @@ class TodoController extends Controller
      * @param  \App\Models\todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, todo $todo)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'title' => 'required|string|max:255',
@@ -114,7 +114,7 @@ class TodoController extends Controller
      * @param  \App\Models\todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(todo $todo)
+    public function destroy($id)
     {
         $todo = todo::where('id', $id)->where('user_id', Auth::user()->id)->firstOrFail();
         $todo->delete();

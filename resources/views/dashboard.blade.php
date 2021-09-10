@@ -62,9 +62,9 @@
 </td>
 </tr>
 @empty
-<td>
+<tr>
 No Items Added!
-</td>
+</tr>
 @endforelse
 {{-- forelse END --}}
 
